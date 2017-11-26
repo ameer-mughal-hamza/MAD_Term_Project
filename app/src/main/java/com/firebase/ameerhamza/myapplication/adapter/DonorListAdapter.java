@@ -35,7 +35,7 @@ public class DonorListAdapter extends RecyclerView.Adapter<DonorListAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         DonorList list = donorLists.get(position);
         holder.donor_name.setText(list.getFirstName());
-        holder.donor_name.setText(list.getMobileNumber());
+        holder.mobile_number.setText(list.getMobileNumber());
     }
 
     @Override
