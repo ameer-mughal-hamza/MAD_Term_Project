@@ -120,4 +120,11 @@
             android:textColor="#fff"
             android:textSize="15dp" />
     </LinearLayout>
+    <ProgressBar
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:visibility="invisible"/>
 </LinearLayout>
