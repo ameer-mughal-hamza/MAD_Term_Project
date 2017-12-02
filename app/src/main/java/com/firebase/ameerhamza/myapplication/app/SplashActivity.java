@@ -1,9 +1,11 @@
-package com.firebase.ameerhamza.myapplication;
+package com.firebase.ameerhamza.myapplication.app;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.firebase.ameerhamza.myapplication.R;
 
 public class SplashActivity extends AppCompatActivity {
 
