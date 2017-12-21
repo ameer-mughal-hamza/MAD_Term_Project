@@ -8,6 +8,7 @@ public class Bloodbank {
     int quantity;
 
     //Blood Bank information like how much blood is available against each blood group
+
     public Bloodbank(String group_name, int quantity) {
         this.group_name = group_name;
         this.quantity = quantity;
