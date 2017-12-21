@@ -60,35 +60,35 @@ public class AppActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        String msg = "";
-
-        switch (item.getItemId()) {
-            case R.id.search:
-                msg = "Search Box is selected!";
-                break;
-            case R.id.edit_profile:
-                Intent intent = new Intent(AppActivity.this, Edit_Profile.class);
-                startActivity(intent);
-                break;
-            case R.id.about:
-                msg = "About is selected!";
-                break;
-            case R.id.logout:
-                Intent intent1 = new Intent(AppActivity.this, LoginActivity.class);
-                startActivity(intent1);
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        String msg = "";
+//
+//        switch (item.getItemId()) {
+//            case R.id.search:
+//                msg = "Search Box is selected!";
+//                break;
+//            case R.id.edit_profile:
+//                Intent intent = new Intent(AppActivity.this, Edit_Profile.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.about:
+//                msg = "About is selected!";
+//                break;
+//            case R.id.logout:
+//                Intent intent1 = new Intent(AppActivity.this, LoginActivity.class);
+//                startActivity(intent1);
+//                finish();
+//                break;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     private void prepareDataResource() {
         addData(new AllDonorFragments(), "Donor");

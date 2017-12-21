@@ -3,6 +3,7 @@
     package="com.firebase.ameerhamza.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DonorDetail"></activity>
+        <activity android:name=".DonorDetail" />
+        <activity android:name=".app.WelcomeActivity"></activity>
     </application>
 
 </manifest>

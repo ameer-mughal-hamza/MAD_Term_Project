@@ -25,6 +25,9 @@ public class AllDonorInformation {
         this.token = token;
     }
 
+    public AllDonorInformation() {
+    }
+
     public static int getId() {
         return id;
     }

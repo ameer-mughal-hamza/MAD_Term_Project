@@ -6,8 +6,35 @@
     android:layout_marginTop="2dp"
     >
 
+    <RelativeLayout
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_row_background">
+
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="@dimen/ic_delete"
+            android:layout_height="@dimen/ic_delete"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padd_10"
+            android:src="@drawable/ic_local_phone_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padd_10"
+            android:layout_toRightOf="@id/delete_icon"
+            android:text="Call"
+            android:textColor="#fff"
+            android:textSize="21dp" />
+
+    </RelativeLayout>
+
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/view_foreground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

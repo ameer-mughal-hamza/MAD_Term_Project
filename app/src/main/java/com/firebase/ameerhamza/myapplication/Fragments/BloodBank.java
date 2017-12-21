@@ -44,7 +44,6 @@ public class BloodBank extends Fragment {
                 adapter = new BloodbankAdapter(lists,getActivity());
                 recyclerView.setAdapter(adapter);
             }
-
             @Override
             public void onFailure(Call<List<Bloodbank>> call, Throwable t) {
 

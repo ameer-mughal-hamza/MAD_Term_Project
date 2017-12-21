@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar mProgressbar;
     String token = "";
     EditText username_et, password_et;
-    Button login, register;
+    Button login, register, learn_more_btn;
     CheckBox remember_me;
     TextInputLayout username_til, password_til;
     SharedPreferences sharedPreferences ;
@@ -48,7 +48,6 @@ public class LoginActivity extends AppCompatActivity {
                 login();
             }
         });
-
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,8 +66,9 @@ public class LoginActivity extends AppCompatActivity {
         username_til = findViewById(R.id.usernameTextLayout);
         password_til = findViewById(R.id.passwordTextLayout);
 
-        login = (Button) findViewById(R.id.loginBtn);
-        register = (Button) findViewById(R.id.registerBtn);
+        login = findViewById(R.id.loginBtn);
+        register = findViewById(R.id.registerBtn);
+        learn_more_btn = findViewById(R.id.learn_more_btn);
 
         remember_me = findViewById(R.id.remebre_me_check_box);
         sharedPreferences = getSharedPreferences("remember_me",MODE_PRIVATE);
