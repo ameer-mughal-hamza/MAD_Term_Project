@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="2dp"
-    >
+    android:layout_marginTop="2dp">
 
     <RelativeLayout
         android:id="@+id/view_background"
@@ -17,7 +16,9 @@
             android:layout_width="@dimen/ic_delete"
             android:layout_height="@dimen/ic_delete"
             android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
             android:layout_marginRight="@dimen/padd_10"
             android:src="@drawable/ic_local_phone_black_24dp" />
 
@@ -37,43 +38,39 @@
         android:id="@+id/view_foreground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@android:color/white"
-        >
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/img_view"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/person"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_margin="7dp"
-            />
+            android:src="@drawable/person" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/first_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Title"
-                android:layout_margin="7dp"
+                android:hint="Name"
                 android:textColor="#616161"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/mobile_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Mobile Number"
-                android:layout_marginLeft="10dp"
-                android:layout_margin="7dp"
                 android:textSize="15dp"
-                android:textStyle="italic"
-                />
+                android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

@@ -107,7 +107,7 @@ public class Edit_Profile extends AppCompatActivity {
 
         DonorInterface api = RetrofitClient.getClient().create(DonorInterface.class);
         int id = AllDonorInformation.getId();
-        Call<User> call = api.editDonor("Bearer " + AllDonorInformation.getToken().toString(), AllDonorInformation.getId());
+        Call<User> call = api.editDonor("Bearer " + AllDonorInformation.getToken(), AllDonorInformation.getId());
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -139,8 +139,8 @@ public class Edit_Profile extends AppCompatActivity {
                 public void onResponse(Call<User> call, Response<User> response) {
                     if (response.isSuccessful()) {
                         User user = response.body();
-                        AllDonorInformation allDonorInformation = new AllDonorInformation(AllDonorInformation.getId(),user.getFirstName(),user.getLastName(),user.getEmail(),
-                                user.getBloodGroup(),user.getCity(),user.getMobileNumber(),AllDonorInformation.getToken());
+                        AllDonorInformation allDonorInformation = new AllDonorInformation(AllDonorInformation.getId(), user.getFirstName(), user.getLastName(), user.getEmail(),
+                                user.getBloodGroup(), user.getCity(), user.getMobileNumber(), AllDonorInformation.getToken());
                         Toast.makeText(Edit_Profile.this, "User Updated" + response.body(), Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(Edit_Profile.this, "User Not Updated" + response, Toast.LENGTH_LONG).show();

@@ -12,24 +12,31 @@ import com.google.gson.Gson;
 
 public class DonorDetail extends AppCompatActivity {
 
-    TextView name;
-    TextView mobile_number;
+    TextView name, email, mobileNumber, gender, bloodGroup, city;
     Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_detail);
         initialize();
         Gson gson = new Gson();
-        User list = gson.fromJson(getIntent().getStringExtra("myJson"),User.class);
-        name.setText(list.getFirstName()+ " " +list.getLastName());
-        mobile_number.setText(list.getMobileNumber());
+        User list = gson.fromJson(getIntent().getStringExtra("myJson"), User.class);
+        name.setText(list.getFirstName());
+        email.setText(list.getEmail());
+        bloodGroup.setText(list.getBloodGroup());
+        mobileNumber.setText(list.getMobileNumber());
+        city.setText(list.getCity());
         toolbar.setTitle(list.getFirstName());
     }
 
     private void initialize() {
         name = findViewById(R.id.name);
-        mobile_number = findViewById(R.id.mobile_number);
+        mobileNumber = findViewById(R.id.mobileNumber);
+        email = findViewById(R.id.email);
+        gender = findViewById(R.id.gender);
+        bloodGroup = findViewById(R.id.bloodGroup);
+        city = findViewById(R.id.city);
         toolbar = findViewById(R.id.toolbar);
     }
 }

@@ -24,7 +24,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".DonorDetail" />
-        <activity android:name=".app.WelcomeActivity"></activity>
     </application>
 
 </manifest>
