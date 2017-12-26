@@ -13,10 +13,17 @@
         android:orientation="vertical"
         android:paddingTop="30dp">
 
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/person" />
+
         <EditText
             android:id="@+id/first_name"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:drawablePadding="10dp"
             android:hint="First name" />
 
@@ -24,6 +31,7 @@
             android:id="@+id/last_name"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:drawablePadding="10dp"
             android:hint="Last name" />
 
@@ -32,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="13dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -47,6 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="13dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -61,14 +71,15 @@
             android:id="@+id/mobile_number"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:drawablePadding="10dp"
             android:hint="Mobile No." />
 
         <Button
             android:id="@+id/update_btn"
-            android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:width="200dp"
             android:background="@drawable/buttonstyle"
             android:text="Update"

@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "860082859226",
-    "firebase_url": "https://myapplication5-42619.firebaseio.com",
-    "project_id": "myapplication5-42619",
-    "storage_bucket": "myapplication5-42619.appspot.com"
+    "project_number": "750438743302",
+    "firebase_url": "https://blood-bank-db4e7.firebaseio.com",
+    "project_id": "blood-bank-db4e7",
+    "storage_bucket": "blood-bank-db4e7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:860082859226:android:89d299d24204a8e7",
+        "mobilesdk_app_id": "1:750438743302:android:4166190bfd3deb48",
         "android_client_info": {
-          "package_name": "com.firebase.ameerhamza.myapplication"
+          "package_name": "com.firebase.ameerhamza.myapplication.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "860082859226-dptkv3gi4s4jd6dkmbsoglkmd8255g68.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.firebase.ameerhamza.myapplication",
-            "certificate_hash": "9c3052fe1e2c97bbc28e26667df0e7ed3e9643f8"
-          }
-        },
-        {
-          "client_id": "860082859226-8ss2forq086voki2lapfr03afur58st3.apps.googleusercontent.com",
+          "client_id": "750438743302-bfimis0opjqhpa29d8gfgaqr0amcf83u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB9xHpBYUGdR89046d4ChwTO_Q1ffpByVg"
+          "current_key": "AIzaSyAbHA_JuhQwSrreeF0K8A-h-mQLLrgI3GY"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "860082859226-8ss2forq086voki2lapfr03afur58st3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

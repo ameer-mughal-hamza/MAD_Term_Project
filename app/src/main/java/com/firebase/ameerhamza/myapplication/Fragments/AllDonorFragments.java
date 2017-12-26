@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.firebase.ameerhamza.myapplication.R;
 import com.firebase.ameerhamza.myapplication.RecyclerItemTouchHelper;
 import com.firebase.ameerhamza.myapplication.adapter.DonorListAdapter;
+import com.firebase.ameerhamza.myapplication.app.AppActivity;
 import com.firebase.ameerhamza.myapplication.app.Edit_Profile;
 import com.firebase.ameerhamza.myapplication.app.LoginActivity;
 import com.firebase.ameerhamza.myapplication.interfaces.DonorInterface;
@@ -42,8 +43,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class AllDonorFragments extends Fragment implements SearchView.OnQueryTextListener,RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
-    public static final String TAG = "MyTag";
+public class AllDonorFragments extends Fragment implements SearchView.OnQueryTextListener, RecyclerItemTouchHelper.RecyclerItemTouchHelperListener {
+    private static final String TAG = "AllDonorFragments";
     RecyclerView recyclerView;
     DonorListAdapter adapter;
     List<User> userList = new ArrayList<>();
@@ -59,39 +60,34 @@ public class AllDonorFragments extends Fragment implements SearchView.OnQueryTex
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_donor_fragments, container, false);
-//        frameLayout = view.findViewById(R.id.)
         recyclerView = view.findViewById(R.id.allDonorRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
         final DonorInterface api = RetrofitClient.getClient().create(DonorInterface.class);
-        String s = AllDonorInformation.getToken();
         Call<List<User>> call = api.getDonors("Bearer " + AllDonorInformation.getToken());
         call.enqueue(new Callback<List<User>>() {
             @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response)
-            {
-                if (response.isSuccessful())
-                {
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                if (response.isSuccessful()) {
                     userList = response.body();
                     adapter = new DonorListAdapter(userList, getActivity());
                     adapter.notifyDataSetChanged();
-                    adapter.setListener(new DonorListAdapter.Listener()
-                    {
+                    adapter.setListener(new DonorListAdapter.Listener() {
                         @Override
-                        public void onClick(int position)
-                        {
+                        public void onClick(int position) {
 
                         }
                     });
                     recyclerView.setHasFixedSize(true);
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                     recyclerView.setAdapter(adapter);
-                }
-                else
-                {
+                } else {
                     Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
             }
@@ -101,61 +97,62 @@ public class AllDonorFragments extends Fragment implements SearchView.OnQueryTex
         return view;
     }
 
-//    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
-    {
+    //    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_main, menu); // Put your search menu in "menu_search" menu file.
         MenuItem mSearchItem = menu.findItem(R.id.search);
         SearchView sv = (SearchView) MenuItemCompat.getActionView(mSearchItem);
         sv.setIconified(true);
-        SearchManager searchManager = (SearchManager)  getActivity().getSystemService(Context.SEARCH_SERVICE);
+        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
         sv.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
         sv.setOnQueryTextListener(this);
         super.onCreateOptionsMenu(menu, inflater);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        String msg = "";
-
         switch (item.getItemId()) {
             case R.id.search:
-                msg = "Search Box is selected!";
                 break;
             case R.id.edit_profile:
                 Intent intent = new Intent(getActivity(), Edit_Profile.class);
                 startActivity(intent);
                 break;
             case R.id.about:
-                msg = "About is selected!";
                 break;
             case R.id.logout:
-                Intent intent1 = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent1);
+//                Intent intent1 = new Intent(getActivity(), LoginActivity.class);
+//                intent1.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                startActivity(intent1);
+                signOut();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    public void signOut() {
+        Toast.makeText(getActivity(), "user sign_out", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        getActivity().finish();
+    }
+
     @Override
-    public boolean onQueryTextSubmit(String query)
-    {
-        if (adapter != null)
-        {
+    public boolean onQueryTextSubmit(String query) {
+        if (adapter != null) {
             query = String.valueOf(query.equals(""));
         }
         return true;
     }
 
     @Override
-    public boolean onQueryTextChange(String newText)
-    {
+    public boolean onQueryTextChange(String newText) {
         newText = newText.toLowerCase();
         List<User> userArrayList = new ArrayList<>();
-        for (User userList : userList)
-        {
+        for (User userList : userList) {
             String name = userList.getFirstName().toLowerCase();
-            if (name.contains(newText))
-            {
+            if (name.contains(newText)) {
                 userArrayList.add(userList);
             }
         }
